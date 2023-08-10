@@ -7,7 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const loginUser = async (email, password) => {
     try {
-      let response = await fetch("http://localhost:5000/api/auth/loginUser", {
+      let response = await fetch(`${process.env.REACT_APP_API_DOMAIN}/api/auth/loginUser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

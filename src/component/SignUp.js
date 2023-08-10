@@ -7,7 +7,7 @@ const SignUp = () => {
     const [user,setUser]=useState({Name:"",Email:"",Password:"",cPassword:""});
     const signupUser = async (name,email,password)=>{
       try {
-        let response = await fetch("http://localhost:5000/api/auth/createUser", {
+        let response = await fetch(`${process.env.REACT_APP_API_DOMAIN}/api/auth/createUser`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

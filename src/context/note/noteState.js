@@ -19,7 +19,7 @@ const NoteState = (props) =>{
 
     //Function for get notes : login require
     const getNotes = async ()=>{
-        let response = await fetch('http://localhost:5000/api/notes/fetchAllnote', {
+        let response = await fetch(`${process.env.REACT_APP_API_DOMAIN}/api/notes/fetchAllnote`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const NoteState = (props) =>{
     }
      //Function for add notes : login require
     const addNote =async (title,description,tag) =>{
-        let response = await fetch('http://localhost:5000/api/notes/addNote', {
+        let response = await fetch(`${process.env.REACT_APP_API_DOMAIN}/api/notes/addNote`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const NoteState = (props) =>{
 
     // Function for delete notes:login require
     const deleteNote = async(id)=>{
-        let response = await fetch(`http://localhost:5000/api/notes/deleteNote/${id}`, {
+        let response = await fetch(`${process.env.REACT_APP_API_DOMAIN}/api/notes/deleteNote/${id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ const NoteState = (props) =>{
 
     // function for update note:login required
     const updateNote = async (id,title,description,tag)=>{
-      let response = await fetch(`http://localhost:5000/api/notes//updateNote/${id}`, {
+      let response = await fetch(`${process.env.REACT_APP_API_DOMAIN}/api/notes//updateNote/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
